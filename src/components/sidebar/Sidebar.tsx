@@ -7,6 +7,8 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import BadgeIcon from "@mui/icons-material/Badge";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LogoutIcon from "@mui/icons-material/Logout";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
 export const Sidebar = () => {
   return (
@@ -52,6 +54,10 @@ export const Sidebar = () => {
             <span>Cerrar Sesión</span>
           </li>
         </ul>
+      </div>
+      <div className="footer">
+        <LightModeIcon className="icon" />
+        <DarkModeOutlinedIcon className="icon" />
       </div>
     </div>
   );
