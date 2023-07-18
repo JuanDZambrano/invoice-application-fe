@@ -1,14 +1,14 @@
-import "./sidebar.scss";
-import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
-import ReceiptIcon from "@mui/icons-material/Receipt";
-import StorefrontIcon from "@mui/icons-material/Storefront";
-import ContactsIcon from "@mui/icons-material/Contacts";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import BadgeIcon from "@mui/icons-material/Badge";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import LogoutIcon from "@mui/icons-material/Logout";
-import LightModeIcon from "@mui/icons-material/LightMode";
+import BadgeIcon from "@mui/icons-material/Badge";
+import ContactsIcon from "@mui/icons-material/Contacts";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import LogoutIcon from "@mui/icons-material/Logout";
+import ReceiptIcon from "@mui/icons-material/Receipt";
+import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
+import StorefrontIcon from "@mui/icons-material/Storefront";
+import "./sidebar.scss";
 
 export const Sidebar = () => {
   return (
