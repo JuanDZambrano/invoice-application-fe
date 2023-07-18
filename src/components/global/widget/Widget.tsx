@@ -1,6 +1,6 @@
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import "./Widget.scss";
+import "../../../styles/components/global/widget/widget.scss";
 
 export interface Widget {
   title: string;

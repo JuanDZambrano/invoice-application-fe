@@ -8,7 +8,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import StorefrontIcon from "@mui/icons-material/Storefront";
-import "./sidebar.scss";
+import "../../../styles/components/global/sidebar/sidebar.scss";
 
 export const Sidebar = () => {
   return (

@@ -5,7 +5,7 @@ import {
   ExpensesWidget,
   IncomeWidget,
 } from "../../components/home";
-import "./home.scss";
+import "../../styles/pages/home/home.scss";
 
 export const Home = () => {
   return (
