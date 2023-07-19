@@ -1,9 +1,12 @@
 import { Sidebar } from "../../components/global";
 import {
   BalanceWidget,
+  BestSellingChart,
   DebtsWidget,
   ExpensesWidget,
   IncomeWidget,
+  SalesChart,
+  SalesTable,
 } from "../../components/home";
 import "../../styles/pages/home/home.scss";
 
@@ -18,6 +21,11 @@ export const Home = () => {
           <DebtsWidget />
           <BalanceWidget />
         </div>
+        <div className="charts">
+          <BestSellingChart />
+          <SalesChart title="Last 6 Months (Revenue)" aspect={2 / 1} />
+        </div>
+        <SalesTable />
       </div>
     </div>
   );
