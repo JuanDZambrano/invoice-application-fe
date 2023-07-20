@@ -25,7 +25,10 @@ export const Home = () => {
           <BestSellingChart />
           <SalesChart title="Last 6 Months (Revenue)" aspect={2 / 1} />
         </div>
-        <SalesTable />
+        <div className="salesListContainer">
+          <div className="salesListTitle">Latest Transactions</div>
+          <SalesTable />
+        </div>
       </div>
     </div>
   );
