@@ -7,9 +7,9 @@ WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 # ---- Copy Files/Build ----
 FROM base AS build
-WORKDIR /src
-COPY . /src/
+WORKDIR /app
+COPY . .
