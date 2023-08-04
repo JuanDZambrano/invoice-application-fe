@@ -1,9 +1,15 @@
 # Dockerfile
 # ---- Base Node ----
 FROM node:18 AS base
+
+# Set work directory
 WORKDIR /app
+
+# Install dependencies
 COPY package*.json ./
 RUN npm install
-COPY . .
-EXPOSE 5173
-CMD ["npm", "run", "dev"]
+
+# ---- Copy Files/Build ----
+FROM base AS build
+WORKDIR /src
+COPY . /src/
