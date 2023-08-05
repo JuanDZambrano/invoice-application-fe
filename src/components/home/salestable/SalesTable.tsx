@@ -7,7 +7,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import "../../styles/components/home/salestable.scss";
+import "../../../styles/components/home/salestable.scss";
 
 export const SalesTable = (): JSX.Element => {
   const rows = [
