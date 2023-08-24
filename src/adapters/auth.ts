@@ -1,26 +1,46 @@
+import { AxiosResponse } from "axios";
 import { apiClient } from "./APIClient";
 import { CustomUser } from "./types";
 import { useQuery, useMutation } from "@tanstack/react-query";
 
 export const fetchUserData = async (): Promise<CustomUser> => {
-  const { data } = await apiClient.get<CustomUser>(`api/v1/auth/users/me/`);
+  const { data } = await apiClient.get<CustomUser>(`api/v1/auth/me/`);
   return data;
 };
 
-export const useUserInfo = () => {
-  return useQuery(["userData"], () => fetchUserData());
+export const loginUser = async (
+  email: string,
+  password: string
+): Promise<boolean | AxiosResponse<CustomUser>> => {
+  return await apiClient
+    .post("api/v1/auth/login/", {
+      email,
+      password,
+    })
+    .catch(() => {
+      return false;
+    });
 };
 
-export const useLoginUser = (username: string, password: string) => {
-  const userInfoQuery = useUserInfo();
+export const useUserInfo = () => {
+  return useQuery({ queryKey: ["userData"], queryFn: () => fetchUserData() });
+};
 
-  return useMutation(async () => {
-    await apiClient.post("api/v1/auth/login/", { username, password });
-
-    // Refresh the user info after login
-    await userInfoQuery.refetch();
-
-    return userInfoQuery;
+export const useLoginUser = (
+  email: string,
+  password: string,
+  onSuccess: () => void,
+  onError: () => void
+) => {
+  return useMutation({
+    mutationFn: async () => {
+      const response = await loginUser(email, password);
+      if (response === false) {
+        onError();
+      } else {
+        onSuccess();
+      }
+    },
   });
 };
 
