@@ -4,9 +4,9 @@ import { Widget } from "../global/widget/Widget";
 export const DebtsWidget = (): JSX.Element => {
   return (
     <Widget
-      title={"Deudas"}
+      title={"Cuentas por pagar"}
       counter={"200"}
-      link={"Ver deudas del mes"}
+      link={"Ver cuentas por pagar del mes"}
       percentage={15}
       icon={
         <RequestQuoteIcon

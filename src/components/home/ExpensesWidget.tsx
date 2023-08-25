@@ -4,9 +4,9 @@ import { Widget } from "../global/widget/Widget";
 export const ExpensesWidget = (): JSX.Element => {
   return (
     <Widget
-      title={"Egresos"}
+      title={"Gastos"}
       counter={"134"}
-      link={"Ver egresos del mes"}
+      link={"Ver gastos del mes"}
       percentage={0}
       icon={
         <MoneyOffCsredOutlinedIcon

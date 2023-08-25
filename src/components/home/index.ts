@@ -1,4 +1,4 @@
-export { IncomeWidget } from "./IncomeWidget";
+export { SalesWidget } from "./SalesWidget";
 export { ExpensesWidget } from "./ExpensesWidget";
 export { DebtsWidget } from "./DebtsWidget";
 export { BalanceWidget } from "./BalanceWidget";

@@ -4,9 +4,9 @@ import {
   BestSellingChart,
   DebtsWidget,
   ExpensesWidget,
-  IncomeWidget,
   SalesChart,
   SalesTable,
+  SalesWidget,
 } from "../../components/home";
 import "../../styles/pages/home/home.scss";
 
@@ -16,7 +16,7 @@ export const Home = () => {
       <Sidebar />
       <div className="home_content">
         <div className="widgets">
-          <IncomeWidget />
+          <SalesWidget />
           <ExpensesWidget />
           <DebtsWidget />
           <BalanceWidget />

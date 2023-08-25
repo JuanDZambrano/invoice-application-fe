@@ -4,9 +4,9 @@ import { Widget } from "../global/widget/Widget";
 export const BalanceWidget = (): JSX.Element => {
   return (
     <Widget
-      title={"Balance"}
+      title={"Clientes activos"}
       counter={"900"}
-      link={"Ver balance del mes"}
+      link={"Ver clientes activos"}
       percentage={5}
       icon={
         <AccountBalanceWalletOutlinedIcon
