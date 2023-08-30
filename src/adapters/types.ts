@@ -94,10 +94,6 @@ export interface OrderItem {
   company: Company;
 }
 
-export interface OrderItemTotalValue {
-  total_value: number;
-}
-
 export interface Bill {
   id: string;
   dueDate: string;
@@ -105,4 +101,8 @@ export interface Bill {
   type: string;
   company: Company;
   status: string;
+}
+
+export interface GenericTotalValue {
+  total_value: number;
 }
