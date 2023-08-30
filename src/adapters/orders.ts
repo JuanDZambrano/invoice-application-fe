@@ -3,32 +3,32 @@ import { Order } from "./types";
 
 export function useOrdersList() {
   return useList<Order>({
-    endpoint: "orders",
+    endpoint: "v1/orders",
     request_id: "orders",
   });
 }
 
 export function useOrderDetail(id: string) {
   return useDetail<Order>({
-    endpoint: `orders/${id}`,
+    endpoint: `v1/orders/${id}`,
     request_id: `orders/${id}`,
   });
 }
 
 export function useOrderCreate() {
   return useCreate<Order>({
-    endpoint: `orders`,
+    endpoint: `v1/orders/`,
   });
 }
 
 export function useOrderUpdate() {
   return useUpdate<Order>({
-    endpoint: `orders/`,
+    endpoint: `v1/orders/`,
   });
 }
 
 export function useOrderDelete() {
   return useDelete({
-    endpoint: `orders/`,
+    endpoint: `v1/orders/`,
   });
 }

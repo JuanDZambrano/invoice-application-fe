@@ -10,17 +10,26 @@ import { apiClient } from "./APIClient";
 export interface APIParameters {
   endpoint: string;
 }
-export interface QueryAPIParameters extends APIParameters {
+
+interface QueryAPIParametersWithParams extends QueryAPIParameters {
+  params?: Record<string, any>;
+}
+
+interface QueryAPIParameters extends APIParameters {
   request_id: string;
   id?: string;
+  params?: Record<string, string | number>;
 }
 
 export function useList<ResponseType>({
   endpoint,
   request_id,
-}: QueryAPIParameters): UseQueryResult<ResponseType[], AxiosError> {
+  params,
+}: QueryAPIParametersWithParams): UseQueryResult<ResponseType[], AxiosError> {
   return useQuery([`${request_id}`], async () => {
-    const { data } = await apiClient.get<ResponseType[]>(`api/${endpoint}`);
+    const { data } = await apiClient.get<ResponseType[]>(`api/${endpoint}`, {
+      params,
+    });
     return data;
   });
 }
@@ -29,10 +38,14 @@ export function useDetail<ResponseType>({
   endpoint,
   request_id,
   id,
+  params,
 }: QueryAPIParameters): UseQueryResult<ResponseType, AxiosError> {
   return useQuery([`${request_id}`], async () => {
     const { data } = await apiClient.get<ResponseType>(
-      `api/${endpoint}/${id || ""}`
+      `api/${endpoint}${id || ""}`,
+      {
+        params,
+      }
     );
     return data;
   });

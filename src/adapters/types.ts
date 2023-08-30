@@ -94,6 +94,10 @@ export interface OrderItem {
   company: Company;
 }
 
+export interface OrderItemTotalValue {
+  total_value: number;
+}
+
 export interface Bill {
   id: string;
   dueDate: string;
